@@ -18,7 +18,6 @@
         <tr><td>Email: '.$email.'</td></tr>
         <tr><td>phone: '.$phone.'</td></tr>
         <tr><td>Text: '.$text.'</td></tr>
-
     </table>';
 
     if (@mail($to, $email, $message, $headers))
