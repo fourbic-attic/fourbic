@@ -1,15 +1,13 @@
 <?php
 
-  
-   
 if(isset($_GET["subscribe"]) && $_GET["subscribe"]=true){
     $email= $_POST["email"];
-    $text="User subscription";
+    $message="User subscription";
     $phone="";
     $name="web subscription";
     $email="";
     $website="";
-     sendMail($name,$email,$phone,$text,$website);
+     sendMail($name,$email,$phone,$message,$website);
 
 }
 
@@ -26,8 +24,7 @@ if(isset($_GET["webform"]) && $_GET["webform"]=true){
 
 }
 
-
-function sendMail($name,$email,$phone,$text,$website){
+function sendMail($name,$email,$phone,$message,$website){
  $to = 'info@fourbic.com';
 
     $headers = 'MIME-Version: 1.0' . "\r\n";
@@ -41,7 +38,7 @@ function sendMail($name,$email,$phone,$text,$website){
         <tr><td>Email: '.$email.'</td></tr>
         <tr><td>Website: '.$website.'</td></tr>
         <tr><td>phone: '.$phone.'</td></tr>
-        <tr><td>Text: '.$text.'</td></tr>
+        <tr><td>Text: '.$message.'</td></tr>
     </table>';
 
     if (@mail($to, $email, $message, $headers))
